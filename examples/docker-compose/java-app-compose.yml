@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  my-java-app:
+    image: ${DOCKER_REGISTRY:-my-registry.example.com}/${DOCKER_NAMESPACE:-my-team}/java-se:${DEFAULT_TAG:-latest}
+    environment:
+      JAVA_OPTS: "-Xms512m -Xmx512m"
+    ports:
+      - "8080:8080"
